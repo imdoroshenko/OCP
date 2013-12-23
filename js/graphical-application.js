@@ -27,7 +27,7 @@ var GraphicalApplication = function(){
                         shape.path[3].x, shape.path[3].y);
                     this.ctx.stroke();
                     break;
-                default:
+                case 'polygon':
                     this.ctx.beginPath();
                     this.ctx.moveTo(shape.path[0].x, shape.path[0].y);
                     for(var i = 1, ln = shape.path.length; i < ln; i++){
@@ -35,6 +35,7 @@ var GraphicalApplication = function(){
                     }
                     this.ctx.closePath();
                     this.ctx.stroke();
+                    break;
             }
         }.bind(this));
         return this;
