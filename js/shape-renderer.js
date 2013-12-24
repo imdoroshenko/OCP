@@ -1,18 +1,10 @@
-var ShapeRenderer = function(){
+var ShapeRenderer = function(context, renderRulesList){
     this.renderRules = [];
-    this.ctx = null;
+    this.ctx = context;
 
-    this.setRenderRules = function(rules){
-        rules.forEach(function(rule){
-            this.renderRules.push(new rule);
-        }.bind(this));
-        return this;
-    };
-
-    this.setContext = function(ctx){
-        this.ctx = ctx;
-        return this;
-    };
+    renderRulesList.forEach(function(rule){
+        this.renderRules.push(new rule);
+    }.bind(this));
 
     this.render = function(shape){
         return this.renderRules.some(function(rule){
@@ -20,3 +12,4 @@ var ShapeRenderer = function(){
         }.bind(this));
     };
 };
+register.registerClass('ShapeRenderer', ShapeRenderer);

@@ -11,18 +11,17 @@ window.addEventListener('load', function(){
         new Shape('circle', [{ x : 250 , y : 250}, { x : 300, y : 250}]),
     ];
 
-    var shapeRenderer = new ShapeRenderer()
-        .setRenderRules([
+    register.registerInjections({
+        renderRulesList : [
             PolygonRenderRule,
             CubicBezierRenderRule,
             RectangleRenderRule,
             CircleRenderRule
-        ])
-        .setContext(ctx);
+        ],
+        context : ctx
+    });
 
-    new GraphicalApplication()
-        .setShapeRenderer(shapeRenderer)
-        .renderShapes(shapesCollection);
+    register.getInstance('GraphicalApplication').renderShapes(shapesCollection);
 
     document.body.appendChild(canvas);
 }, false);

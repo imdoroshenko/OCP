@@ -1,13 +1,9 @@
-var GraphicalApplication = function(){
-    this.shapeRenderer = null;
-
-    this.setShapeRenderer = function(shapeRenderer){
-        this.shapeRenderer = shapeRenderer;
-        return this;
-    };
+var GraphicalApplication = function(ShapeRenderer){
+    this.shapeRenderer = new ShapeRenderer();
 
     this.renderShapes = function(shapesCollection){
         shapesCollection.forEach(this.shapeRenderer.render.bind(this.shapeRenderer));
         return this;
     };
 };
+register.registerClass('GraphicalApplication', GraphicalApplication);
