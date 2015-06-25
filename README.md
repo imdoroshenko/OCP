@@ -1,7 +1,7 @@
 # OCP
 
-This is repositiory with code examples for my workshop about S.O.L.I.D. principles. 
+This is repository with code examples for my workshop about S.O.L.I.D. principles.
 
-It's contains several branches that sows how you can inplement Open-Closed Principle.
+It's contains several branches that demonstrate how you can implement Open-Closed Principle.
 
-Link on presentation: https://goo.gl/kIgyRk
+Presentation: https://goo.gl/kIgyRk
